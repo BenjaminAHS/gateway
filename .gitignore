@@ -3,9 +3,10 @@
 # dependencies
 node_modules/
 **/node_modules/
-gateway-temp/node_modules/
+gateway-temp/
 .next/
-**/ .next/
+**/.next/
+.env*
 /.pnp
 .pnp.*
 .yarn/*
