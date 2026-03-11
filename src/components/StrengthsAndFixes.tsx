@@ -1,8 +1,10 @@
 "use client";
 
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { ThumbsUp, AlertTriangle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ThumbsUp, AlertTriangle, Lock } from "lucide-react";
 
 interface StrengthsAndFixesProps {
   strengths: string[];
@@ -10,6 +12,15 @@ interface StrengthsAndFixesProps {
 }
 
 export function StrengthsAndFixes({ strengths, weaknesses }: StrengthsAndFixesProps) {
+  const [fixesUnlocked, setFixesUnlocked] = useState(false);
+  const maxFreeFixes = 1;
+
+  const visibleWeaknesses = useMemo(
+    () => (fixesUnlocked ? weaknesses : weaknesses.slice(0, maxFreeFixes)),
+    [fixesUnlocked, weaknesses]
+  );
+  const hiddenCount = Math.max(weaknesses.length - visibleWeaknesses.length, 0);
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
       <motion.div
@@ -28,7 +39,7 @@ export function StrengthsAndFixes({ strengths, weaknesses }: StrengthsAndFixesPr
             <ul className="space-y-2 text-sm text-zinc-300">
               {strengths.map((s, i) => (
                 <li key={i} className="flex gap-2">
-                  <span className="text-emerald-500 shrink-0">•</span>
+                  <span className="text-emerald-500 shrink-0">*</span>
                   <span>{s}</span>
                 </li>
               ))}
@@ -50,13 +61,28 @@ export function StrengthsAndFixes({ strengths, weaknesses }: StrengthsAndFixesPr
           </CardHeader>
           <CardContent className="pt-0">
             <ul className="space-y-2 text-sm text-zinc-300">
-              {weaknesses.map((w, i) => (
+              {visibleWeaknesses.map((w, i) => (
                 <li key={i} className="flex gap-2">
-                  <span className="text-amber-500 shrink-0">•</span>
+                  <span className="text-amber-500 shrink-0">*</span>
                   <span>{w}</span>
                 </li>
               ))}
             </ul>
+            {!fixesUnlocked && hiddenCount > 0 && (
+              <div className="mt-4 rounded-lg border border-white/10 bg-zinc-950/60 px-3 py-3 text-xs text-zinc-400">
+                Unlock all improvements to see {hiddenCount} more critical fixes.
+              </div>
+            )}
+            {!fixesUnlocked && hiddenCount > 0 && (
+              <Button
+                variant="outline"
+                className="mt-3 w-full gap-2"
+                onClick={() => setFixesUnlocked(true)}
+              >
+                <Lock className="w-4 h-4" />
+                Unlock all improvements for 5 ALBUCK$
+              </Button>
+            )}
           </CardContent>
         </Card>
       </motion.div>

@@ -32,9 +32,14 @@ export function JobSelector({ onSelect }: JobSelectorProps) {
       animate="show"
       className="w-full max-w-4xl mx-auto px-4"
     >
-      <p className="text-center text-zinc-400 text-sm sm:text-base mb-6">
-        Choose an internship to match your CV against
-      </p>
+      <div className="text-center mb-6">
+        <h2 className="text-xl sm:text-2xl font-semibold text-zinc-100">
+          Choose an internship to match your CV against
+        </h2>
+        <p className="mt-2 text-zinc-400 text-sm sm:text-base">
+          Get a job-specific score and instant feedback
+        </p>
+      </div>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {(FEATURED_JOBS as FeaturedJob[]).map((job) => (
           <motion.div key={job.id} variants={item}>

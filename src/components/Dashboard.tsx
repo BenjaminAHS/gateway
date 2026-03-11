@@ -10,7 +10,6 @@ import { MagicFix } from "./MagicFix";
 import { SkillRadar } from "./SkillRadar";
 import { ExperienceTranslator } from "./ExperienceTranslator";
 import { GatewayCertifiedBadge } from "./GatewayCertifiedBadge";
-import { Matchmaker } from "./Matchmaker";
 import { InterviewSimulator } from "./InterviewSimulator";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
@@ -93,12 +92,6 @@ export function Dashboard({ analysis, selectedJob = null }: DashboardProps) {
           </motion.section>
         )}
 
-        <motion.section variants={sectionVariants}>
-          <Matchmaker
-            matches={analysis.matches}
-            matchesOutreach={analysis.matches_outreach}
-          />
-        </motion.section>
       </motion.div>
 
       {interviewOpen && (
