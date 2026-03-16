@@ -52,7 +52,7 @@ export function PaidContactDiscovery() {
               Find recruiters already inside the company
             </CardTitle>
             <p className="text-sm text-zinc-400">
-              ContactOut-style: names + roles + likely professional emails.
+              Chose a company you want to work in and it gives : names + roles + likely professional emails.
             </p>
           </CardHeader>
           <CardContent className="relative space-y-4">

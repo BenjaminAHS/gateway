@@ -54,7 +54,7 @@ export function PaidPriorityApplication() {
               Priority Application Pack
             </CardTitle>
             <p className="text-sm text-zinc-400">
-              Auto-generate 3 tailored cover letters + 3 DM/email scripts and send it directly to main recruiters of the company.
+              Chose a company. It auto-generate 3 tailored cover letters + 3 DM/email scripts and send it directly to main recruiters of the company.
             </p>
           </CardHeader>
           <CardContent className="relative space-y-4">

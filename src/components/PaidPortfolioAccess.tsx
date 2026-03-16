@@ -60,7 +60,7 @@ export function PaidPortfolioAccess() {
               Real companies portfolio
             </CardTitle>
             <p className="text-sm text-zinc-400">
-              For B1 International students who need an internship this summer, right now.
+              Access to contacts of 30 companies who hired bachelor students last year.
             </p>
           </CardHeader>
           <CardContent className="relative space-y-4">

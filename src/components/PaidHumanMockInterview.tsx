@@ -52,7 +52,7 @@ export function PaidHumanMockInterview() {
               Live interview with a real recruiter
             </CardTitle>
             <p className="text-sm text-zinc-400">
-              Book a 30-minute session and get structured feedback fast.
+              Book a 30-minute session with a pro recruiter of our team and get structured feedback fast.
             </p>
           </CardHeader>
           <CardContent className="relative space-y-4">

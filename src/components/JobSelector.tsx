@@ -69,6 +69,15 @@ export function JobSelector({ onSelect }: JobSelectorProps) {
           </motion.div>
         ))}
       </div>
+      <motion.div
+        variants={item}
+        className="text-center mt-6"
+      >
+        <p className="text-zinc-400 text-sm">
+          <span className="text-violet-400 font-medium">+30 more unlockable</span>
+          {" "}for 5 albucks
+        </p>
+      </motion.div>
     </motion.div>
   );
 }

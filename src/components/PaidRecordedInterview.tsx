@@ -51,7 +51,7 @@ export function PaidRecordedInterview() {
               Asynchronous interview simulation
             </CardTitle>
             <p className="text-sm text-zinc-400">
-              Video or audio answers + tailored questions + instant feedback.
+              We give you 3 tailored questions, record yourself and gives instant feedback.
             </p>
           </CardHeader>
           <CardContent className="relative space-y-4">
